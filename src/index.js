@@ -2,16 +2,16 @@ const Discord = require("discord.js");
 const prefix = "s!";
 const bot = new Discord.Client();
 
-bot.token = "NjI0Njk5NzEzNTAwNzQxNjU1.XYUy8g.wS97SwffWBZDQ3cpgvFBzDHNFNk";
+bot.token = "NjI0Njk5NzEzNTAwNzQxNjU1.XYUy8g.bpnuYNNoGuP5sKZTLAkf2rw2JTY";
 
 bot.on("ready", () => {
-  console.log("bot is working");
+  console.log("I am up");
 });
 bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "badword")) {
-    msg.channel.send("fuck off, you homozygous asshole.");
+    msg.channel.send("fuck off.");
   }
 });
 
