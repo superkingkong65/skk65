@@ -1,14 +1,13 @@
 const Discord = require("discord.js");
 const prefix = "s!";
-const axios = require("axios");
 const bot = new Discord.Client();
 
-const token = "NjI0Njk5NzEzNTAwNzQxNjU1.XhZT-g.fX06INg24WpKqEP0bIypKKDuXqU";
+bot.token = "NjI0Njk5NzEzNTAwNzQxNjU1.XYUy8g.wS97SwffWBZDQ3cpgvFBzDHNFNk";
 
 bot.on("ready", () => {
   console.log("bot is working");
 });
-bot.on("message", msg => {
+bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "badword")) {
@@ -16,7 +15,7 @@ bot.on("message", msg => {
   }
 });
 
-bot.on("message", msg => {
+bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "help")) {
@@ -31,7 +30,7 @@ var mon2 = "./monika/monika2.png";
 var mon3 = "./monika/monika3.jpg";
 var mon4 = "./monika/monika4.jpg";
 
-bot.on("message", msg => {
+bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "monika")) {
@@ -60,7 +59,7 @@ var food2 = "./food/food2.jpg";
 var food3 = "./food/food3.jpg";
 var food4 = "./food/food4.jpg";
 
-bot.on("message", msg => {
+bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "food")) {
@@ -89,7 +88,7 @@ var walrus2 = "./walrus/walrus2.png";
 var walrus3 = "./walrus/walrus3.jpg";
 var walrus4 = "./walrus/walrus4.jpg";
 
-bot.on("message", msg => {
+bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "walrus")) {
@@ -118,7 +117,7 @@ var yukari2 = "./yukari/yukari2.gif";
 var yukari3 = "./yukari/yukari3.jpg";
 var yukari4 = "./yukari/yukari4.jpg";
 
-bot.on("message", msg => {
+bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "yukari")) {
@@ -147,7 +146,7 @@ var bubblegum2 = "./bubblegum/bubblegum2.jpg";
 var bubblegum3 = "./bubblegum/bubblegum3.jpg";
 var bubblegum4 = "./bubblegum/bubblegum4.png";
 
-bot.on("message", msg => {
+bot.on("message", (msg) => {
   if (!msg.content.startsWith(prefix)) return;
 
   if (msg.content.startsWith(prefix + "bubblegum")) {
@@ -170,17 +169,3 @@ bot.on("message", msg => {
     }
   }
 });
-
-bot.on("message", msg => {
-  if (!msg.content.startsWith(prefix)) return;
-
-  if (msg.content.startsWith(prefix + 'joke')) {
-    let getJoke = async () => {
-      let response = await axios.get("https://sv443.net/jokeapi/category/Dark");
-      let joke = response.data;
-      return joke;
-      let jokeValue = await getJoke(200);
-    console.log(jokeValue);
-});
-
-bot.login(token);
